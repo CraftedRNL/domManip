@@ -49,10 +49,32 @@ input.addEventListener('input', function(){
 
 //#5
 let list = document.getElementById('mysteryList');
-
+let colors = ["highlight-l", "highlightI"];
+let turn = 1;
 list.addEventListener('click', function(i){
-    const clicked = i.target;
-    clicked.style.color = 'blue'
+    let arr = list.children;
+    console.log(arr)
+    var li = list.querySelectorAll("li");
+    console.log (Array.prototype.indexOf.call(li, i.target)); // got from a website 
+    let yellow = Array.prototype.indexOf.call(li, i.target);
+    
+
+    arr[yellow].classList.add("highlight1")
+
+    // for(let i = 0; i < arr.length; i++){
+    //     if(i!==yellow){
+    //         arr[i].classList.add(colors[i])
+    //     }
+    // }
+
+    for(let i = 0; i < arr.length; i++){
+        if(i!==yellow){
+            arr[i].classList.add(colors[i])
+        }
+       
+    }
+  
+    
 })
 
 
